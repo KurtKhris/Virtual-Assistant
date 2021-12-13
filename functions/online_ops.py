@@ -11,6 +11,7 @@ TMDB_API_KEY = config("TMDB_API_KEY")
 EMAIL = config("EMAIL")
 PASSWORD = config("PASSWORD")
 
+
 def find_my_ip():
     ip_address = requests.get('https://api64.ipify.org?format=json').json()
     return ip_address["ip"]

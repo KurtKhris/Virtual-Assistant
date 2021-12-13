@@ -1,5 +1,4 @@
 import requests
-import pyaudio
 from functions.online_ops import find_my_ip, get_latest_news, get_random_advice, get_random_joke, get_trending_movies, get_weather_report, play_on_youtube, search_on_google, search_on_wikipedia, send_email, send_whatsapp_message
 import pyttsx3
 import speech_recognition as sr
@@ -10,8 +9,10 @@ from random import choice
 from utils import opening_text
 from pprint import pprint
 
+
 USERNAME = config('USER')
 BOTNAME = config('BOTNAME')
+
 
 engine = pyttsx3.init('sapi5')
 
@@ -25,14 +26,16 @@ engine.setProperty('volume', 1.0)
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 
+
 # Text to Speech Conversion
 def speak(text):
     """Used to speak whatever text is passed to it"""
-    
+
     engine.say(text)
     engine.runAndWait()
 
-# Greet the User
+
+# Greet the user
 def greet_user():
     """Greets the user according to the time"""
     
@@ -45,10 +48,11 @@ def greet_user():
         speak(f"Good Evening {USERNAME}")
     speak(f"I am {BOTNAME}. How may I assist you?")
 
-# Take input from User
+
+# Takes Input from User
 def take_user_input():
     """Takes user input, recognizes it using Speech Recognition module and converts it into text"""
-
+    
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print('Listening....')
