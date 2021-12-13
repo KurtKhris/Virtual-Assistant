@@ -1,4 +1,5 @@
 import requests
+import pyaudio
 from functions.online_ops import find_my_ip, get_latest_news, get_random_advice, get_random_joke, get_trending_movies, get_weather_report, play_on_youtube, search_on_google, search_on_wikipedia, send_email, send_whatsapp_message
 import pyttsx3
 import speech_recognition as sr
